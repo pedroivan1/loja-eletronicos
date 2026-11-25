@@ -20,14 +20,4 @@ public class Menu
         Console.WriteLine("                     TED");
         Console.WriteLine(new string('-', 47));
     }
-
-    public static void Limpar()
-    {
-        Console.Clear();
-    }
-
-    public static void Aguardar(int ms)
-    {
-        Thread.Sleep(ms);
-    }
 }

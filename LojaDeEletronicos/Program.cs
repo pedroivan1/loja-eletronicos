@@ -6,15 +6,14 @@ class Program
 {
     static void Main()
     {
+        Estoque estoque = new Estoque();
         bool loop = true;
 
         do
         {
-            Menu.Limpar();
+            Utils.Limpar();
 
             Menu.Cabecalho();
-
-            Estoque estoque = new Estoque();
 
             Menu.Controle();
 
@@ -25,20 +24,30 @@ class Program
                 switch (input)
                 {
                 case "1": // Vizualizar Estoque
+                    Utils.Limpar();
+                    estoque.MostrarEstoque();
                     break;
                 case "2": // Adicionar Produto
+                    Estoque.CadastrarProduto(estoque);
                     break;
                 case "3": // Remover Produto
+                    Utils.Limpar();
+                    estoque.RemoverProduto(estoque);
                     break;
                 case "4": // Buscar Produto
+                    Console.WriteLine("Vizualizar");
                     break;
                 case "5": // Limpar Estoque
+                    estoque.LimparEstoque(estoque);
                     break;
                 case "6": // Sair
                     return;
+                default:
+                    Utils.Mensagem("Opcao invalida.");
+                    break;
                 }
             }
-            else Utils.Erro("Opcao invalida. ");     
+            else Utils.Mensagem("Opcao invalida. ");     
         }
         while(loop);
     }

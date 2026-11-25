@@ -14,9 +14,19 @@ public class Utils
         else return false;
     }
 
-    public static void Erro(string mensagem)
+    public static void Mensagem(string mensagem)
     {
         Console.WriteLine(mensagem);
-        Menu.Aguardar(1500);
+        Aguardar(1500);
+    }
+
+        public static void Limpar()
+    {
+        Console.Clear();
+    }
+
+    public static void Aguardar(int ms)
+    {
+        Thread.Sleep(ms);
     }
 }
