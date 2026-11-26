@@ -7,6 +7,7 @@ class Program
     static void Main()
     {
         Estoque estoque = new Estoque();
+        Dados.Carregar(estoque);
         bool loop = true;
 
         do
@@ -28,23 +29,38 @@ class Program
                     estoque.MostrarEstoque();
                     break;
                 case "2": // Adicionar Produto
-                    Estoque.CadastrarProduto(estoque);
+                    estoque.CadastrarProduto();
                     break;
                 case "3": // Remover Produto
                     Utils.Limpar();
-                    estoque.RemoverProduto(estoque);
+                    estoque.RemoverProduto();
                     break;
                 case "4": // Buscar Produto
-                    Console.WriteLine("Vizualizar");
+                    Utils.Limpar();
+                    Console.WriteLine("[ 1 ]  Buscar por Codigo");
+                    Console.WriteLine("[ 2 ]  Buscar por Marca");
+                    Console.WriteLine("[ 3 ]  Buscar por Modelo");
+                    Console.Write("[ OPCAO ] > ");
+                    string inputBusca = Console.ReadLine();
+
+                    if (inputBusca == "1") BuscaPorCod.Buscar(estoque);
+                    else if (inputBusca == "2") BuscaPorMarca.Buscar(estoque);
+                    else if (inputBusca == "3") BuscaPorModelo.Buscar(estoque);
+                    else Utils.Mensagem("Opcao invalida.");
                     break;
-                case "5": // Limpar Estoque
-                    estoque.LimparEstoque(estoque);
+                case "5": // Ordenar Estoque
+                    Utils.Limpar();
+                    Ordenacao.Ordenar(estoque);
                     break;
-                case "6": // Sair
+                case "6": // Selecionar Produto
+                    Utils.Limpar();
+                    Selecao.Selecionar(estoque);
+                    break;
+                case "7": // Limpar Estoque
+                    estoque.LimparEstoque();
+                    break;
+                case "8": // Sair
                     return;
-                default:
-                    Utils.Mensagem("Opcao invalida.");
-                    break;
                 }
             }
             else Utils.Mensagem("Opcao invalida. ");     
