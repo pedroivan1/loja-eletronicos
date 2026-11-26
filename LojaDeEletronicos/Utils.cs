@@ -29,4 +29,10 @@ public class Utils
     {
         Thread.Sleep(ms);
     }
+    public static bool ReadDouble(string input, out double valor)
+    {
+        valor = 0;
+        if (input == null) return false;
+        return double.TryParse(input.Replace(',', '.'), NumberStyles.Float, CultureInfo.InvariantCulture, out valor);
+    }
 }
