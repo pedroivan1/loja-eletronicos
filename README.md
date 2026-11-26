@@ -2,11 +2,6 @@
 
 Sistema de gerenciamento de estoque de uma loja de eletronicos, desenvolvido em C# (console), com aplicacao de algoritmos de busca, selecao e ordenacao sobre uma estrutura de dados linear.
 
-## Integrantes
-
-- [Seu nome completo]
-- [Nome completo do colega]
-
 ## Sobre o projeto
 
 O programa permite cadastrar, listar, remover, buscar, ordenar e selecionar produtos de uma loja de eletronicos. Cada produto possui codigo (gerado automaticamente), marca, modelo, preco e quantidade em estoque.
